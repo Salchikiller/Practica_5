@@ -42,12 +42,15 @@ public class GraphTest{
     	assertNotNull(g);
 }
  @Test
-    public void add_Vertice(){
+    public void add_un_Vertice(){
         assertEquals(true,g.addVertex(1));
     }
 
-	
-	
+	@Test
+    public void no_add_Vertice(){
+        g.addVertex(2);
+        assertEquals(false,g.addVertex(2));
+    }
 
 	
 	
