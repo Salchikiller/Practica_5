@@ -1,7 +1,8 @@
-package pr2;
+package util;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class GraphTest{
+	Graph<Integer> g = new Graph<>();
 
     @Test
     public void addVertex(){
@@ -35,6 +37,13 @@ public class GraphTest{
 		    System.err.println(e);
 	    }
     }
+	
+	
+	
+	
+
+	
+	
 
     /*
      * This test checks that the method `shortestPath(V v1, V v2)` finds the 

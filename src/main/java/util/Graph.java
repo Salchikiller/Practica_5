@@ -1,18 +1,19 @@
-package pr2;
+package util;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.ArrayDeque;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class Graph<V>{
 
-    //Lista de adyacencia.
+    // Lista de adyacencia.
     private Map<V, Set<V>> adjacencyList = new HashMap<>();
 
     /**
@@ -22,8 +23,10 @@ public class Graph<V>{
      * @return `true` si no estaba anteriormente y `false` en caso contrario.
      */
     public boolean addVertex(V v){
-	adjacencyList.put(v, new HashSet<V>());
-        return true; //Este código hay que modificarlo.
+        if (adjacencyList.containsKey(v))
+            return false;
+        adjacencyList.put(v, new HashSet<>());
+        return true;
     }
 
     /**
@@ -35,10 +38,9 @@ public class Graph<V>{
      * @return `true` si no existía el arco y `false` en caso contrario.
      */
     public boolean addEdge(V v1, V v2){
-	adjacencyList.put(v1, new HashSet<V>());
-	adjacencyList.put(v2, new HashSet<V>());
-	adjacencyList.get(v1).add(v2);
-        return true; //Este código hay que modificarlo.
+        addVertex(v1);
+        addVertex(v2);
+        return adjacencyList.get(v1).add(v2);
     }
 
     /**
@@ -48,17 +50,19 @@ public class Graph<V>{
      * @return conjunto de vértices adyacentes.
      */
     public Set<V> obtainAdjacents(V v) throws Exception{
-	return adjacencyList.get(v);
+        if(adjacencyList.get(v) == null) throw new Exception("Vertice no encontrado");
+        Set<V> adjacents = adjacencyList.get(v);
+        return adjacents;
     }
 
     /**
-     * Comprueba si el grafo contiene el vértice dado. 
+     * Comprueba si el grafo contiene el vértice dado.
      *
      * @param v vértice para el que se realiza la comprobación.
      * @return `true` si `v` es un vértice del grafo.
      */
     public boolean containsVertex(V v){
-        return adjacencyList.containsKey(v); //Este código hay que modificarlo.
+        return adjacencyList.containsKey(v);
     }
 
     /**
@@ -67,7 +71,16 @@ public class Graph<V>{
      */
     @Override
     public String toString(){
-        return ""; //Este código hay que modificarlo.
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        for (Map.Entry<V, Set<V>> entry : adjacencyList.entrySet()) {
+            sb.append(entry.getKey()).append(": ").append(entry.getValue()).append(", ");
+        }
+        if (!adjacencyList.isEmpty()) {
+            sb.setLength(sb.length() - 2); // Remove the trailing comma and space
+        }
+        sb.append("}");
+        return sb.toString();
     }
 
     /**
@@ -80,6 +93,35 @@ public class Graph<V>{
      * entre `v1` y `v2`
      **/
     public List<V> shortestPath(V v1, V v2){
-        return null; // Esto código hay que modificarlo.
+        Map<V, V> previo = new HashMap<V,V>();
+        List<V> caminoMasCorto = new ArrayList<>();
+        if (v2.equals(v1) && adjacencyList.containsKey(v2)){
+            caminoMasCorto.add(v2);
+            return caminoMasCorto;
+        }
+        Queue<V> cola = new LinkedList<V>();
+        cola.add(v1);
+        previo.put(v1, null);
+        boolean encontrado = false;
+        while(!encontrado && !cola.isEmpty()){
+            V nodoActual = cola.poll();            
+            encontrado = nodoActual.equals(v2);
+            Set<V> sucesores =
+                adjacencyList.get(nodoActual).stream().
+                   filter(x -> !previo.containsKey(x)).
+                      collect(Collectors.toSet());
+            cola.addAll(sucesores);
+            sucesores.forEach(x -> previo.put(x, nodoActual));
+
+        }
+
+        if (previo.get(v2) == null) return caminoMasCorto;
+
+        for(V vertice = v2; vertice != null; vertice = previo.get(vertice)){
+            caminoMasCorto.add(vertice);
+        }
+        Collections.reverse(caminoMasCorto);
+        return caminoMasCorto;
+
     }
 }
