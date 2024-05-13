@@ -34,7 +34,7 @@ cd Practica_5
 Para asegurarnos de que estamos trabajando con un estado limpio, vamos a eliminar cualquier archivo previamente compilado:
 
 ```bash
-mvn limpiar
+mvn clean
 ```
 
 ### 4. Compilar el Código Fuente
@@ -52,7 +52,7 @@ Después de compilar, vamos a crear el archivo JAR que contiene el programa:
 mvn test 
 ```
 
-### 6. Ejecutar el Programa
+### 6. Crear .jar
 
 Finalmente, vamos a ejecutar y generar el archivo ejecutable ".jar"
 
