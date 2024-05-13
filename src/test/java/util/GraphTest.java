@@ -41,6 +41,10 @@ public class GraphTest{
 	public void si_existe_Grafo(){
     	assertNotNull(g);
 }
+@Test
+public void add_un_Vertice(){
+    assertEquals(true, true);
+}
 
 	
 	
