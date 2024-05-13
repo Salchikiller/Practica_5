@@ -39,7 +39,7 @@ public class GraphTest{
     }
 	@Test
 	public void si_existe_Grafo(){
-    	assertTrue(true);
+    	assertNotNull(g);
 }
 
 	
