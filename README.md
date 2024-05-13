@@ -37,25 +37,20 @@ Para asegurarnos de que estamos trabajando con un estado limpio, vamos a elimina
 mvn clean
 ```
 
-### 4. Compilar el Código Fuente
 
-Ahora vamos a compilar el código fuente del programa:
 
-```bash
-mvn compilar
-```
-
-### 5. Hacer los test 
+### 4. Hacer los test 
 Después de compilar, vamos a crear el archivo JAR que contiene el programa:
 
 ```bash
 mvn test 
 ```
 
-### 6. Crear .jar
+### 5. Crear .jar
 
 Finalmente, vamos a ejecutar y generar el archivo ejecutable ".jar"
 
 ```bash
 mvn package
 ```
+ 

@@ -52,6 +52,12 @@ public class GraphTest{
         assertEquals(false,g.addVertex(2));
     }
 
+
+	@Test
+	public void si_esta_Vacio(){
+		assertEquals("{}", g.toString());
+	}
+
 	
 	
 
