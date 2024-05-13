@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/surefire/surefirebooter17578881018160510302.jar /Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/surefire 2024-05-13T22-32-16_027-jvmRun1 surefire17818680401228296556tmp surefire_010200136880124531008tmp"/>
+    <property name="sun.java.command" value="/Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/surefire/surefirebooter5611841664382887607.jar /Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/surefire 2024-05-13T22-41-03_282-jvmRun1 surefire8897032962847559219tmp surefire_012870464054967011468tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/test-classes:/Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/classes:/Users/salchikiller/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/salchikiller/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/surefire/surefirebooter17578881018160510302.jar"/>
+    <property name="surefire.real.class.path" value="/Users/salchikiller/Documents/CEU/Programacion_2/Practica_5/target/surefire/surefirebooter5611841664382887607.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>

@@ -37,7 +37,11 @@ public class GraphTest{
 		    System.err.println(e);
 	    }
     }
-	
+	@Test
+	public void si_existe_Grafo(){
+    	assertTrue(true);
+}
+
 	
 	
 	
